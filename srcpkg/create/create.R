@@ -10,7 +10,7 @@ use_many <- \(src = "srcpkg"){
   use_build_ignore(src)
 
   # copy existing R files in srcpkg
-  existing <- list.files("R")
+  existing <- list.files("R", full.names = TRUE)
   if(!length(existing))
     return(invisible())
 
