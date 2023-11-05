@@ -3,18 +3,21 @@
 #' Bundles R files from nested directory into a flat one.
 #' 
 #' @param src Source directory.
-#' @param src Source file to copy.
+#' @param file Source file to copy.
 #' @param dest Destination directory.
 #' 
 #' @name bundle
 #' @export
 bundle <- \(src = "srcpkg", dest = "R"){
   list.files(
-    ".", 
+    src, 
     pattern = "*.R$", 
     recursive = TRUE
   ) |>
-    lapply(\(file) bundle_file, dest = dest)
+    lapply(\(file) {
+      file <- file.path(src, file)
+      bundle_file(file = file, dest = dest)
+    })
 }
 
 #' @rdname bundle

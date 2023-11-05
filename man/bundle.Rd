@@ -2,14 +2,19 @@
 % Please edit documentation in R/core.R
 \name{bundle}
 \alias{bundle}
+\alias{bundle_file}
 \title{Bundle}
 \usage{
 bundle(src = "srcpkg", dest = "R")
+
+bundle_file(file, dest = "R")
 }
 \arguments{
 \item{src}{Source directory.}
 
 \item{dest}{Destination directory.}
+
+\item{file}{Source file to copy.}
 }
 \description{
 Bundles R files from nested directory into a flat one.

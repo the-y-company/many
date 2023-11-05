@@ -2,7 +2,9 @@
 #' 
 #' @inheritParams bundle
 #' 
-#' @param
+#' @importFrom usethis use_build_ignore
+#' 
+#' @export
 use_many <- \(src = "srcpkg"){
   create_dir_if_not_exists(src)
   use_build_ignore(src)

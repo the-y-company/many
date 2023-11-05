@@ -22,7 +22,7 @@ create_dir_if_not_exists <- \(dir){
 #' @keywords internal
 make_destination_file <- \(srcfile, destdir) {
   base <- basename(srcfile)
-  sprintf("%s/%s", destdir, base)
+  file.path(destdir, base)
 }
 
 #' Remove file

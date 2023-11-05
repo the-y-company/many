@@ -3,45 +3,43 @@
 #' Bundles R files from nested directory into a flat one.
 #' 
 #' @param src Source directory.
+#' @param file Source file to copy.
 #' @param dest Destination directory.
 #' 
+#' @name bundle
 #' @export
 bundle <- \(src = "srcpkg", dest = "R"){
-  cleanup(dest)
-  
   list.files(
-    ".", 
+    src, 
     pattern = "*.R$", 
     recursive = TRUE
   ) |>
     lapply(\(file) {
-      destination <- make_destination_file(file, dest)
-
-      if(file.exists(destination)){
-        cat(destination, "already exists, skipping:", file, "\n")
-        return()
-      }
-
-      cat(file, "copied to", destination, "\n")
-
-      file.copy(
-        file, 
-        to = destination,
-        overwrite = FALSE
-      )
+      file <- file.path(src, file)
+      bundle_file(file = file, dest = dest)
     })
 }
 
-make_destination_file <- \(srcfile, destdir) {
-  base <- basename(srcfile)
-  sprintf("%s/%s", destdir, base)
-}
+#' @rdname bundle
+#' @export
+bundle_file <- \(file, dest = "R") {
+  if(missing(file))
+    stop("missing file")
 
-cleanup <- \(destdir) {
-  cat("cleaning up", destdir, "\n")
+  destination <- make_destination_file(file, dest)
+  remove_file(destination)
 
-  if(dir.exists(destdir))
-    unlink(destdir, recursive = TRUE, force = TRUE)
+  # should not happen: failsafe.
+  if(file.exists(destination)){
+    cat(destination, "already exists, skipping:", file, "\n")
+    return()
+  }
 
-  create_dir_if_not_exists(destdir)
+  cat(file, "copied to", destination, "\n")
+
+  file.copy(
+    file, 
+    to = destination,
+    overwrite = FALSE
+  )
 }
