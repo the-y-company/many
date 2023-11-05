@@ -1,0 +1,20 @@
+Package: many
+Title: Multiple Folders in Packages
+Version: 0.0.0.9000
+Authors@R: 
+  c(
+    person(given = "John",
+           family = "Coene",
+           role = c("aut", "cre"),
+           email = "john@the-y-company.com"),
+    person(family = "Y",
+           role = c("cph", "fnd"),
+           email = "info@the-y-company.com")
+  )
+Description: Multiple folders in 'R Packages'.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE, roclets = c("collate", "namespace", "rd", "many::roclet_many"))
+RoxygenNote: 7.2.3
+Imports:
+  roxygen2
