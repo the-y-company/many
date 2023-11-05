@@ -46,3 +46,24 @@ below in order to bundle the files every time you run `devtools::document()`.
 Roxygen: list(markdown = TRUE, roclets = c("collate", "namespace", "rd", "many::roclet_many"))
 ```
 
+### RStudio Addin
+
+Look for the "Bundle" addin in RStudio and select it.
+The addin will bundle any file in `srcpkg` on save.
+
+### Vscode
+
+The easiest is probably to add a command to the 
+[emeraldwalk plugin](https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave).
+
+```json
+"emeraldwalk.runonsave": {
+	"commands": [
+		{
+			"match": "*.R",
+			"isAsync": false,
+			"cmd": "R -s -e 'many::bundle(\'${file}\')'"
+		},
+	]
+}
+```

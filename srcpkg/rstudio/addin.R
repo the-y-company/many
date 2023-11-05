@@ -11,7 +11,7 @@ bundle_on_save <- \(){
     \() {
       doc <- rstudioapi::getActiveDocumentContext()
 
-      if(doc$path == "")
+      if(!grepl("srcpkg", doc$path))
         return()
 
       bundle_file(doc$path)
