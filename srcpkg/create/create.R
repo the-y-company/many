@@ -2,7 +2,7 @@
 #' 
 #' @inheritParams bundle
 #' 
-#' @importFrom usethis use_build_ignore
+#' @importFrom usethis use_build_ignore use_package
 #' 
 #' @export
 use_many <- \(src = "srcpkg"){
@@ -15,6 +15,7 @@ use_many <- \(src = "srcpkg"){
     return(invisible())
 
   file.copy(existing, src)
+  use_package("many", type = "Suggests")
 
   invisible(TRUE)
 }

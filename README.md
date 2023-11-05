@@ -11,6 +11,8 @@ them to the `/R` directory.
 The `srcpkg` can contain multiple nested directories,
 for an example look at the source code the this package.
 
+Everything else remains the same, e.g.: use of `inst`, etc.
+
 ## Setup
 
 You can use the `use_many()` function from the root of 
