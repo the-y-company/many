@@ -60,9 +60,9 @@ The easiest is probably to add a command to the
 "emeraldwalk.runonsave": {
 	"commands": [
 		{
-			"match": "*.R",
+			"match": "*.R$",
 			"isAsync": false,
-			"cmd": "R -s -e 'many::bundle(\'${file}\')'"
+			"cmd": "R -s -e 'many::bundle(\\'${file}\\')'"
 		},
 	]
 }
