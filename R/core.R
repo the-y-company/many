@@ -17,7 +17,8 @@ bundle <- \(src = "srcpkg", dest = "R"){
     lapply(\(file) {
       file <- file.path(src, file)
       bundle_file(file = file, dest = dest)
-    })
+    }) |> 
+    invisible()
 }
 
 #' @rdname bundle

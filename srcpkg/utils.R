@@ -21,8 +21,14 @@ create_dir_if_not_exists <- \(dir){
 #' 
 #' @keywords internal
 make_destination_file <- \(srcfile, destdir) {
-  base <- basename(srcfile)
-  file.path(destdir, base)
+  fl <- srcfile |>
+    strsplit("/") |>
+    (\(.) .[[1]])()
+
+  fl <- fl[2:length(fl)] |>
+    (\(.) paste0(., collapse = "-"))()
+
+  file.path(destdir, fl)
 }
 
 #' Remove file
