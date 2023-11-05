@@ -19,3 +19,5 @@ RoxygenNote: 7.2.3
 Imports:
   roxygen2,
   usethis
+Suggests:
+  rstudioapi

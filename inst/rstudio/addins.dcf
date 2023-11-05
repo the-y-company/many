@@ -1,0 +1,4 @@
+Name: Bundle
+Description: Bundle on document save
+Binding: bundle_on_save
+Interactive: false
