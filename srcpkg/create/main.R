@@ -17,7 +17,6 @@ use_many <- \(src = "srcpkg"){
 
   file.copy(existing, src)
   use_package("many", type = "Suggests")
-  file.create(".many")
   use_build_ignore(".many")
 
   invisible(TRUE)
