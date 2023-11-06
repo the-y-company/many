@@ -9,7 +9,7 @@
 #' @name bundle
 #' @export
 bundle <- \(src = "srcpkg", dest = "R"){
-  list.files(
+  files <- list.files(
     src, 
     pattern = "*.R$", 
     recursive = TRUE
@@ -17,8 +17,9 @@ bundle <- \(src = "srcpkg", dest = "R"){
     lapply(\(file) {
       file <- file.path(src, file)
       bundle_file(file = file, dest = dest)
-    }) |> 
-    invisible()
+    })
+
+  save_hashes() 
 }
 
 #' @rdname bundle
@@ -28,6 +29,12 @@ bundle_file <- \(file, dest = "R") {
     stop("missing file")
 
   destination <- make_destination_file(file, dest)
+
+  if(!hash_match(destination, type = "dst")) {
+    cat("ignoring", destination, "it looks like it way edited, delete manually and re-run.\n")
+    return()
+  }
+    
   remove_file(destination)
 
   # should not happen: failsafe.
@@ -38,9 +45,14 @@ bundle_file <- \(file, dest = "R") {
 
   cat(file, "copied to", destination, "\n")
 
-  file.copy(
+  copied <- file.copy(
     file, 
     to = destination,
     overwrite = FALSE
   )
+
+  hash_set(file, type = "src")
+  hash_set(destination, type = "dst")
+
+  invisible(copied)
 }

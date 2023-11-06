@@ -1,0 +1,18 @@
+{
+  "src": {
+    "srcpkg/core.R": "37f664f111053e9dd2858d06409b0092",
+    "srcpkg/create/main.R": "75140433a4885c6abebbd56322c6f6ac",
+    "srcpkg/roclet/main.R": "c91d053173570c427538c97f50556d0d",
+    "srcpkg/rstudio/addin.R": "994dcf8006f212e47ef895fb328c5a7a",
+    "srcpkg/track/main.R": "12e7cb260918bb07e8526b10c6246508",
+    "srcpkg/utils.R": "2233d9e66ec1b7f0dd174ba393904483"
+  },
+  "dst": {
+    "R/core.R": "37f664f111053e9dd2858d06409b0092",
+    "R/create-main.R": "75140433a4885c6abebbd56322c6f6ac",
+    "R/roclet-main.R": "c91d053173570c427538c97f50556d0d",
+    "R/rstudio-addin.R": "994dcf8006f212e47ef895fb328c5a7a",
+    "R/track-main.R": "12e7cb260918bb07e8526b10c6246508",
+    "R/utils.R": "2233d9e66ec1b7f0dd174ba393904483"
+  }
+}

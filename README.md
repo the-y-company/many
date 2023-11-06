@@ -6,7 +6,8 @@ Use _many_ directories to build R packages.
 
 The function `bundle` looks, by default, for
 `.R` files in the `srcpkg` and simply copies
-them to the `/R` directory.
+them to the `/R` directory whilst tracking of 
+changes in the hidden `.many` file.
 
 The `srcpkg` can contain multiple nested directories,
 for an example look at the source code the this package.

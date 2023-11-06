@@ -1,12 +1,9 @@
 install: check
-	R -e "devtools::install()"
+	R -s -e "devtools::install()"
 
 check: document
-	R -e "devtools::check()"
-
-install: check
-	R -e "devtools::install()"
+	R -s -e "devtools::check()"
 
 document:
-	R -e "devtools::document()"
+	R -s -e "devtools::document()"
 

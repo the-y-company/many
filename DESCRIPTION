@@ -18,6 +18,11 @@ Roxygen: list(markdown = TRUE, roclets = c("collate", "namespace", "rd", "many::
 RoxygenNote: 7.2.3
 Imports:
   roxygen2,
-  usethis
+  usethis,
+  digest,
+  mapper
 Suggests:
+  jsonlite,
   rstudioapi
+Remotes:
+  devOpifex/mapper
