@@ -7,20 +7,23 @@ handle <- NULL
 #' @export
 bundle_on_save <- \(){
   handle <<- rstudioapi::registerCommandCallback(
-    "saveSourceDoc", 
+    "saveSourceDoc",
     \() {
       doc <- rstudioapi::getActiveDocumentContext()
 
-      if(!grepl("srcpkg", doc$path))
+      if (!grepl("srcpkg", doc$path)) {
         return()
+      }
 
       bundle_file(doc$path)
-    })
+    }
+  )
 }
 
 .onUnload <- \(...) {
-  if(is.null(handle))  
+  if (is.null(handle)) {
     return()
+  }
 
   rstudioapi::unregisterCommandCallback(handle)
 }

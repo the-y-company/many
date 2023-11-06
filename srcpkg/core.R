@@ -1,17 +1,17 @@
 #' Bundle
-#' 
+#'
 #' Bundles R files from nested directory into a flat one.
-#' 
+#'
 #' @param src Source directory.
 #' @param file Source file to copy.
 #' @param dest Destination directory.
-#' 
+#'
 #' @name bundle
 #' @export
 bundle <- \(src = "srcpkg", dest = "R"){
   files <- list.files(
-    src, 
-    pattern = "*.R$", 
+    src,
+    pattern = "*.R$",
     recursive = TRUE
   ) |>
     lapply(\(file) {
@@ -19,38 +19,39 @@ bundle <- \(src = "srcpkg", dest = "R"){
       bundle_file(file = file, dest = dest)
     })
 
-  save_hashes() 
+  save_hashes()
 }
 
 #' @rdname bundle
 #' @export
 bundle_file <- \(file, dest = "R") {
-  if(missing(file))
+  if (missing(file)) {
     stop("missing file")
+  }
 
   destination <- make_destination_file(file, dest)
 
-  if(!hash_match(destination, type = "dst")) {
+  if (!hash_match(destination, type = "dst")) {
     error("MISMATCH:  ", bold(destination), " it looks like it was edited, delete manually and re-run.\n")
     return()
   }
 
-  if(hash_match(file, default = FALSE)) {
+  if (hash_match(file, default = FALSE)) {
     info("UNCHANGED: ", underline(file), ".\n")
     return()
   }
-    
+
   # we cleanup
   remove_file(destination)
 
   copied <- file.copy(
-    file, 
+    file,
     to = destination,
     overwrite = FALSE
   )
 
   # really should not happen
-  if(!copied) {
+  if (!copied) {
     error("ERROR:     copying ", underline(file), " to ", bold(destination), "\n")
     return()
   }

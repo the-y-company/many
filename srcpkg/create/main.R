@@ -1,9 +1,9 @@
 #' Use many
-#' 
+#'
 #' @inheritParams bundle
-#' 
+#'
 #' @importFrom usethis use_build_ignore use_package use_build_ignore
-#' 
+#'
 #' @export
 use_many <- \(src = "srcpkg"){
   create_dir_if_not_exists(src)
@@ -11,8 +11,9 @@ use_many <- \(src = "srcpkg"){
 
   # copy existing R files in srcpkg
   existing <- list.files("R", full.names = TRUE)
-  if(!length(existing))
+  if (!length(existing)) {
     return(invisible())
+  }
 
   file.copy(existing, src)
   use_package("many", type = "Suggests")

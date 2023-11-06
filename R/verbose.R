@@ -1,20 +1,20 @@
 #' Collapse message for CLI
-#' 
+#'
 #' Collapse a message to pass to `cli` functions.
-#' 
+#'
 #' @param ... Any number of strings.
-#' 
+#'
 #' @keywords internal
 collapse_msg <- \(...) {
   c(...)
 }
 
 #' Message
-#' 
+#'
 #' Info message
-#' 
+#'
 #' @inheritParams collapse_msg
-#' 
+#'
 #' @keywords internal
 #' @importFrom cli cli_alert_info
 info <- \(...){
@@ -61,8 +61,9 @@ warn <- \(...){
 
 #' @keywords internal
 run_if_verbose <- \(fn) {
-  if(!is_verbose())
+  if (!is_verbose()) {
     return()
+  }
 
   fn()
 }
