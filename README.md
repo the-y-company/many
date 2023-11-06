@@ -53,7 +53,14 @@ source code.
 
 Below are some options, pick your favourite.
 
+### Custom Document
+
+Use the custom `document` function which simply runs `many::bundle()`
+followed by `devtools::document()`.
+
 ### Roclet
+
+> Potential issue where `rd` seems to always run before `many::roclet_many()`.
 
 Use the roxygen2 roclet `many::roclet_many` in your `DESCRIPTION` as indicated
 below in order to bundle the files every time you run `devtools::document()`.
