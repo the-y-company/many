@@ -7,5 +7,5 @@
 reset()
 }
 \description{
-Reset
+Deletes \verb{,many}.
 }
