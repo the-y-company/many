@@ -43,7 +43,8 @@ remove_file <- \(file) {
     stop("missing file")
 
   if(!file.exists(file))
-    return()
+    return(invisible(FALSE))
 
-  file.remove(file)
+  file.remove(file) |>
+    invisible()
 }

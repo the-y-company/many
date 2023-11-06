@@ -31,12 +31,12 @@ bundle_file <- \(file, dest = "R") {
   destination <- make_destination_file(file, dest)
 
   if(!hash_match(destination, type = "dst")) {
-    error("MISMATCH:  ", destination, " it looks like it was edited, delete manually and re-run.\n")
+    error("MISMATCH:  ", bold(destination), " it looks like it was edited, delete manually and re-run.\n")
     return()
   }
 
   if(hash_match(file, default = FALSE)) {
-    info("UNCHANGED: ", file, ".\n")
+    info("UNCHANGED: ", underline(file), ".\n")
     return()
   }
     
@@ -51,11 +51,11 @@ bundle_file <- \(file, dest = "R") {
 
   # really should not happen
   if(!copied) {
-    error("ERROR:     copying ", file, " to ", destination, "\n")
+    error("ERROR:     copying ", underline(file), " to ", bold(destination), "\n")
     return()
   }
 
-  success("COPIED:    ", file, " copied to ", destination, "\n")
+  success("COPIED:    ", underline(file), " copied to ", bold(destination), "\n")
 
   hash_set(file, type = "src")
   hash_set(destination, type = "dst")

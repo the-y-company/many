@@ -6,8 +6,7 @@
 #' 
 #' @keywords internal
 collapse_msg <- \(...) {
-  c(...) |>
-    (\(.) paste0(., collapse = ""))()
+  c(...)
 }
 
 #' Message
@@ -60,11 +59,22 @@ warn <- \(...){
   )
 }
 
+#' @keywords internal
 run_if_verbose <- \(fn) {
   if(!is_verbose())
     return()
 
   fn()
+}
+
+#' @keywords internal
+underline <- \(x) {
+  cli::style_underline(x)
+}
+
+#' @keywords internal
+bold <- \(x) {
+  cli::style_bold(x)
 }
 
 MANY_VERBOSE <- TRUE # nolint

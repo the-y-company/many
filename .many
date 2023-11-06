@@ -1,20 +1,22 @@
 {
   "src": {
-    "srcpkg/core.R": "3e9623ba517abf4cf72b14a3d0e0ce10",
+    "srcpkg/core.R": "2b2c8062c62b47762ed5bb2d40e88117",
     "srcpkg/create/main.R": "75140433a4885c6abebbd56322c6f6ac",
+    "srcpkg/reset.R": "696cd9f8c0c36fcafb356ac525beb271",
     "srcpkg/roclet/main.R": "c91d053173570c427538c97f50556d0d",
     "srcpkg/rstudio/addin.R": "994dcf8006f212e47ef895fb328c5a7a",
     "srcpkg/track/main.R": "e307c986c13d55691da08f6c86da2886",
-    "srcpkg/utils.R": "2233d9e66ec1b7f0dd174ba393904483",
-    "srcpkg/verbose.R": "23d912923dac0c6538acbac9ee64fccb"
+    "srcpkg/utils.R": "afec1e6fe009de202733334986d0f32a",
+    "srcpkg/verbose.R": "2621a69c9d854ed4bd876356c8cbef1c"
   },
   "dst": {
-    "R/core.R": "3e9623ba517abf4cf72b14a3d0e0ce10",
+    "R/core.R": "2b2c8062c62b47762ed5bb2d40e88117",
     "R/create-main.R": "75140433a4885c6abebbd56322c6f6ac",
+    "R/reset.R": "696cd9f8c0c36fcafb356ac525beb271",
     "R/roclet-main.R": "c91d053173570c427538c97f50556d0d",
     "R/rstudio-addin.R": "994dcf8006f212e47ef895fb328c5a7a",
     "R/track-main.R": "e307c986c13d55691da08f6c86da2886",
-    "R/utils.R": "2233d9e66ec1b7f0dd174ba393904483",
-    "R/verbose.R": "23d912923dac0c6538acbac9ee64fccb"
+    "R/utils.R": "afec1e6fe009de202733334986d0f32a",
+    "R/verbose.R": "2621a69c9d854ed4bd876356c8cbef1c"
   }
 }

@@ -2,24 +2,26 @@
 
 Use _many_ directories to build R packages.
 
-## How it works
+## Usage
 
 The function `bundle` looks, by default, for
 `.R` files in the `srcpkg` and simply copies
-them to the `/R` directory whilst tracking of 
+them to the `/R` directory whilst tracking of
 changes in the hidden `.many` file.
+If that process fails you can run `reset` to clear
+that file.
 
 The `srcpkg` can contain multiple nested directories,
 for an example look at the source code the this package.
 
 Everything else remains the same, e.g.: use of `inst`, etc.
 
-You can set the `MANY_VERBOSE` environment variable to `FALSE` if 
+You can set the `MANY_VERBOSE` environment variable to `FALSE` if
 you want to switch off all messages.
 
 ## Setup
 
-You can use the `use_many()` function from the root of 
+You can use the `use_many()` function from the root of
 a package.
 
 It will create the `srcpkg` directory and copy existing files
@@ -32,13 +34,13 @@ many::use_many()
 ```
 
 > Note that the `R` directory gets wiped at every `bundle`
-call. Do not edit any of the files within it.
+> call. Do not edit any of the files within it.
 
 From there call `many::bundle()` to copy your files across.
 
 ## Bundling
 
-You do not want to run `bundle()` manually after every change to the 
+You do not want to run `bundle()` manually after every change to the
 source code.
 
 Below are some options, pick your favourite.
@@ -59,7 +61,7 @@ The addin will bundle any file in `srcpkg` on save.
 
 ### Vscode
 
-The easiest is probably to add a command to the 
+The easiest is probably to add a command to the
 [emeraldwalk plugin](https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave).
 
 ```json
