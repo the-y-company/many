@@ -1,6 +1,14 @@
+<div align="center">
 # Many
 
 Use _many_ directories to build R packages.
+
+This allows using many folders to write R packages,
+letting you structure the project more or less how you
+want but keep the existing R toolchain around R packages
+(testing, documentation, etc.).
+
+</div>
 
 ## Usage
 
