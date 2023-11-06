@@ -20,7 +20,8 @@ Imports:
   roxygen2,
   usethis,
   digest,
-  mapper
+  mapper,
+  cli
 Suggests:
   jsonlite,
   rstudioapi

@@ -82,12 +82,18 @@ hash_has <- \(file, type = c("src", "dst")) {
 
 #' @rdname hash
 #' @keywords internal
-hash_match <- \(file, type = c("src", "dst")) {
+hash_match <- \(file, type = c("src", "dst"), default = TRUE) {
   old_hash <- hash_get(file, type = type)
+
+  # this is the first time we run this
+  # the corresponding R file does not yet exist
+  if(!file.exists(file))
+    return(default)
+
   new_hash <- hash(file)
 
   if(is.null(old_hash))
-    return(TRUE)
+    return(default)
 
   identical(old_hash, new_hash)
 }

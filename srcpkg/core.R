@@ -31,25 +31,31 @@ bundle_file <- \(file, dest = "R") {
   destination <- make_destination_file(file, dest)
 
   if(!hash_match(destination, type = "dst")) {
-    cat("ignoring", destination, "it looks like it way edited, delete manually and re-run.\n")
+    error("MISMATCH:  ", destination, " it looks like it was edited, delete manually and re-run.\n")
+    return()
+  }
+
+  if(hash_match(file, default = FALSE)) {
+    info("UNCHANGED: ", file, ".\n")
     return()
   }
     
+  # we cleanup
   remove_file(destination)
-
-  # should not happen: failsafe.
-  if(file.exists(destination)){
-    cat(destination, "already exists, skipping:", file, "\n")
-    return()
-  }
-
-  cat(file, "copied to", destination, "\n")
 
   copied <- file.copy(
     file, 
     to = destination,
     overwrite = FALSE
   )
+
+  # really should not happen
+  if(!copied) {
+    error("ERROR:     copying ", file, " to ", destination, "\n")
+    return()
+  }
+
+  success("COPIED:    ", file, " copied to ", destination, "\n")
 
   hash_set(file, type = "src")
   hash_set(destination, type = "dst")

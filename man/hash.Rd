@@ -15,7 +15,7 @@ hash_get(file, type = c("src", "dst"))
 
 hash_has(file, type = c("src", "dst"))
 
-hash_match(file, type = c("src", "dst"))
+hash_match(file, type = c("src", "dst"), default = TRUE)
 
 hash_name(file, type = c("src", "dst"))
 
