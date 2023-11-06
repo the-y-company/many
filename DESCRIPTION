@@ -14,7 +14,7 @@ Authors@R:
 Description: Multiple folders in 'R Packages'.
 License: GPL (>= 3)
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE, roclets = c("collate", "namespace", "rd", "many::roclet_many"))
+Roxygen: list(markdown = TRUE, roclets = c("many::roclet_many", "collate", "namespace", "rd"))
 RoxygenNote: 7.2.3
 Imports:
   roxygen2,
