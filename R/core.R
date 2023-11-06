@@ -9,7 +9,11 @@
 #' @name bundle
 #' @export
 bundle <- \(src = "srcpkg", dest = "R"){
-  files <- list.files(
+  # because file.path does not strip that !?
+  src <- gsub("/$", "", src)
+  dest <- gsub("/$", "", dest)
+
+  list.files(
     src,
     pattern = "*.R$",
     recursive = TRUE
@@ -19,6 +23,7 @@ bundle <- \(src = "srcpkg", dest = "R"){
       bundle_file(file = file, dest = dest)
     })
 
+  tidy(src, dest)
   save_hashes()
 }
 

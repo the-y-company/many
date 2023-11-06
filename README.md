@@ -27,6 +27,9 @@ Everything else remains the same, e.g.: use of `inst`, etc.
 You can set the `MANY_VERBOSE` environment variable to `FALSE` if
 you want to switch off all messages.
 
+You can run `tidy()` to clean up old files but you should not have
+to do this, it's handled in `bundle()`.
+
 ## Setup
 
 You can use the `use_many()` function from the root of
