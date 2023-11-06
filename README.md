@@ -14,6 +14,9 @@ for an example look at the source code the this package.
 
 Everything else remains the same, e.g.: use of `inst`, etc.
 
+You can set the `MANY_VERBOSE` environment variable to `FALSE` if 
+you want to switch off all messages.
+
 ## Setup
 
 You can use the `use_many()` function from the root of 
