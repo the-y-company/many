@@ -17,10 +17,10 @@ The function `bundle` looks, by default, for
 them to the `/R` directory whilst tracking of
 changes in the hidden `.many` file.
 If that process fails you can run `reset` to clear
-that file.
+that file the subsequent `bundle` run will force copy all files.
 
 The `srcpkg` can contain multiple nested directories,
-for an example look at the source code the this package.
+for an example look at the source code of this package.
 
 Everything else remains the same, e.g.: use of `inst`, etc.
 
