@@ -62,6 +62,11 @@ Below are some options, pick your favourite.
 Use the custom `document` function which simply runs `many::bundle()`
 followed by `devtools::document()`.
 
+### Custom Load all
+
+Use the custom `load_all` function which simply runs `many::bundle()`
+followed by `devtools::load_all()`.
+
 ### Roclet
 
 > Potential issue where `rd` seems to always run before `many::roclet_many()`.
