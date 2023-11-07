@@ -30,6 +30,9 @@ tidy <- \(src = "srcpkg", dest = "R"){
 
   to_delete <- existing_dest_files[!existing_dest_files %in% expected_dest_files]
 
+  # we need to keep this file regardless
+  to_delete <- to_delete[!to_delete %in% file.path(dest, "00_DO_NOT_EDIT.R")]
+
   if (!length(to_delete)) {
     return(invisible())
   }
