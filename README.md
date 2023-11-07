@@ -1,5 +1,6 @@
 <div align="center">
-# Many
+
+<h1>Many</h1>
 
 Use _many_ directories to build R packages.
 
