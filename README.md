@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Many</h1>
+<img src="inst/logo.png" height=200 />
 
 Use _many_ directories to build R packages.
 
