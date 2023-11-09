@@ -16,8 +16,8 @@ use_many <- \(src = "srcpkg"){
   # if src empty
   # if not it is likely that 
   # use_many was already run
-  if(length(list.files(src))) {
-    error(src, "already contains files\n")
+  if(lengthnst(list.files(src))) {
+    error(src, " already contains files\n")
     return(invisible())
   }
 
@@ -34,6 +34,10 @@ use_many <- \(src = "srcpkg"){
   # add dependencies
   use_package("many", type = "Suggests")
   use_build_ignore(".many")
+
+  # create .many
+  list() |>
+    jsonlite::write_json(".many", auto_unbox = TRUE, pretty = TRUE)
 
   # add DO_NOT_EDIT.R
   fl <- system.file("templates/no-edit.R")
