@@ -9,6 +9,11 @@
 #' @name bundle
 #' @export
 bundle <- \(src = "srcpkg", dest = "R"){
+  if(!is_many()){
+    error("this is not a \"many\" project, run `use_many()`\n")
+    return(invisible())
+  }
+
   # because file.path does not strip that !?
   src <- gsub("/$", "", src)
   dest <- gsub("/$", "", dest)
@@ -25,6 +30,8 @@ bundle <- \(src = "srcpkg", dest = "R"){
 
   tidy(src, dest)
   save_hashes()
+
+  invisible()
 }
 
 #' @rdname bundle

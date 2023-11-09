@@ -18,17 +18,19 @@ create_maps <- \() {
   src <- hashes$src
   dst <- hashes$dst
 
-  src |>
-    seq_along() |>
-    lapply(\(i) {
-      ms$set(names(src)[i], src[[i]])
-    })
+  if(length(src))
+    src |>
+      seq_along() |>
+      lapply(\(i) {
+        ms$set(names(src)[i], src[[i]])
+      })
 
-  dst |>
-    seq_along() |>
-    lapply(\(i) {
-      md$set(names(dst)[i], dst[[i]])
-    })
+  if(length(dst))
+    dst |>
+      seq_along() |>
+      lapply(\(i) {
+        md$set(names(dst)[i], dst[[i]])
+      })
 }
 
 # Create maps on load

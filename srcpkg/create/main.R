@@ -7,14 +7,29 @@
 #' @export
 use_many <- \(src = "srcpkg"){
   create_dir_if_not_exists(src)
-  use_build_ignore(src)
 
-  # copy existing R files in srcpkg
-  existing <- list.files("R", full.names = TRUE)
-  if (!length(existing)) {
+  if(is_many()){
+    error("this is already a \"many\" project\n")
     return(invisible())
   }
-  file.copy(existing, src)
+
+  # if src empty
+  # if not it is likely that 
+  # use_many was already run
+  if(length(list.files(src))) {
+    error(src, "already contains files\n")
+    return(invisible())
+  }
+
+  use_build_ignore(src)
+
+  existing <- list.files("R", full.names = TRUE)
+
+  # copy existing R files in srcpkg
+  if (length(existing)) {
+    info("copying files from R to ", src, "\n")
+    file.copy(existing, src)
+  }
 
   # add dependencies
   use_package("many", type = "Suggests")

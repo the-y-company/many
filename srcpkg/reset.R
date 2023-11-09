@@ -4,5 +4,6 @@
 #'
 #' @export
 reset <- \() {
-  remove_file(".many")
+  list() |>
+    jsonlite::write_json(".many", auto_unbox = TRUE, pretty = TRUE)
 }

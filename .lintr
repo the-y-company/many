@@ -3,7 +3,6 @@ linters: linters_with_defaults(
     trailing_whitespace_linter = NULL,
     commented_code_linter = NULL,
     function_left_parentheses_linter = NULL,
-    function_return_linter = NULL,
     spaces_left_parentheses_linter = NULL,
     paren_body_linter = NULL,
     brace_linter = NULL,
@@ -13,3 +12,4 @@ linters: linters_with_defaults(
     ),
     object_usage_linter = NULL # this uses eval()
   )
+

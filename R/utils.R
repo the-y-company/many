@@ -51,3 +51,12 @@ remove_file <- \(file) {
   file.remove(file) |>
     invisible()
 }
+
+#' Is Many?
+#' 
+#' We check if it is indeed using `.many`
+#' 
+#' @keywords internal
+is_many <- \(){
+  file.exists(".many")
+}
