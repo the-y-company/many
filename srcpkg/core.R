@@ -18,6 +18,11 @@ bundle <- \(src = "srcpkg", dest = "R"){
   src <- gsub("/$", "", src)
   dest <- gsub("/$", "", dest)
 
+  bundle_announce("{.pkg many}: bundling")
+  on.exit({
+    bundle_done("{.pkg many}: done")
+  })
+
   list.files(
     src,
     pattern = "*.R$",

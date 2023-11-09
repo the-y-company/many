@@ -78,9 +78,28 @@ bold <- \(x) {
   cli::style_bold(x)
 }
 
-MANY_VERBOSE <- TRUE # nolint
+#' @keywords internal
+bundle_announce <- \(...) {
+  run_if_verbose(
+    \() {
+      collapse_msg(...) |>
+        cli::cli_rule()
+    }
+  )
+}
 
+#' @keywords internal
+bundle_done <- \(...) {
+  run_if_verbose(
+    \() {
+      collapse_msg(...) |>
+        cli::cli_rule()
+    }
+  )
+}
+
+#' @keywords internal
 is_verbose <- \(){
-  Sys.getenv(MANY_VERBOSE, unset = TRUE) |>
+  Sys.getenv("MANY_VERBOSE", unset = TRUE) |>
     as.logical()
 }
