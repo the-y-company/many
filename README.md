@@ -11,7 +11,7 @@ want but keep the existing R toolchain around R packages
 
 </div>
 
-## Usage
+## How it works
 
 The function `bundle` looks, by default, for
 `.R` files in the `srcpkg` and simply copies
@@ -20,16 +20,15 @@ changes in the hidden `.many` file.
 If that process fails you can run `reset` to clear
 that file the subsequent `bundle` run will force copy all files.
 
-The `srcpkg` can contain multiple nested directories,
+- The `srcpkg` can contain multiple nested directories,
 for an example look at the source code of this package.
-
 Everything else remains the same, e.g.: use of `inst`, etc.
-
-You can set the `MANY_VERBOSE` environment variable to `FALSE` if
+- Set the `MANY_VERBOSE` environment variable to `FALSE` if
 you want to switch off all messages.
-
-You can run `tidy()` to clean up old files but you should not have
+- Run `tidy()` to clean up old files but you should not have
 to do this, it's handled in `bundle()`.
+- If you run into any issue you can always reset the tracking by
+running `many::reset()` (you will NOT lose any progress).
 
 ## Setup
 
@@ -59,19 +58,19 @@ Below are some options, pick your favourite.
 
 ### Custom Document
 
-Use the custom `document` function which simply runs `many::bundle()`
+Use the custom `many::document()` function which simply runs `many::bundle()`
 followed by `devtools::document()`.
 
 ### Custom Load all
 
-Use the custom `load_all` function which simply runs `many::bundle()`
+Use the custom `many::load_all()` function which simply runs `many::bundle()`
 followed by `devtools::load_all()`.
 
 ### Roclet
 
 > Potential issue where `rd` seems to always run before `many::roclet_many()`.
 
-Use the roxygen2 roclet `many::roclet_many` in your `DESCRIPTION` as indicated
+Use the roxygen2 roclet `many::roclet_many()` in your `DESCRIPTION` as indicated
 below in order to bundle the files every time you run `devtools::document()`.
 
 ```r
