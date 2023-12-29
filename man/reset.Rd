@@ -7,5 +7,5 @@
 reset()
 }
 \description{
-Deletes \verb{,many}, forces copying of files with subsequent \code{bundle} run.
+Reinitialise \verb{,many}, forces copying of files with subsequent \code{bundle} run.
 }

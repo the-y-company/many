@@ -1,6 +1,6 @@
 #' Reset
 #'
-#' Deletes `,many`, forces copying of files with subsequent `bundle` run.
+#' Reinitialise `,many`, forces copying of files with subsequent `bundle` run.
 #'
 #' @export
 reset <- \() {
