@@ -1,7 +1,7 @@
 {
   "src": {
     "srcpkg/core.R": "bc3846f73091452ff06dbd559708e9c2",
-    "srcpkg/create/main.R": "f937a0f876f8504526efd754484ad40a",
+    "srcpkg/create/main.R": "be249aba4f7c23326819f3f7bf83265c",
     "srcpkg/devtools/document.R": "8487e78af31a7e9f5d8c2870df37fe3f",
     "srcpkg/devtools/load-all.R": "96625984b3d1001132f08b3d589da702",
     "srcpkg/reset.R": "19e7dbd90761472dc539ab7e69eb709d",
@@ -15,7 +15,7 @@
   },
   "dst": {
     "R/core.R": "bc3846f73091452ff06dbd559708e9c2",
-    "R/create-main.R": "f937a0f876f8504526efd754484ad40a",
+    "R/create-main.R": "be249aba4f7c23326819f3f7bf83265c",
     "R/devtools-document.R": "8487e78af31a7e9f5d8c2870df37fe3f",
     "R/devtools-load-all.R": "96625984b3d1001132f08b3d589da702",
     "R/reset.R": "19e7dbd90761472dc539ab7e69eb709d",
