@@ -16,7 +16,7 @@ use_many <- \(src = "srcpkg"){
   # if src empty
   # if not it is likely that 
   # use_many was already run
-  if(length(list.files(src))) {
+  if(lengthnst(list.files(src))) {
     error(src, " already contains files\n")
     return(invisible())
   }
@@ -41,7 +41,7 @@ use_many <- \(src = "srcpkg"){
 
   # add DO_NOT_EDIT.R
   fl <- system.file("templates/no-edit.R")
-  file.copy(fl, file.path("R", "00_DO_NOT_EDIT.R"))
+  file.copy(fl, file.path("R", "00_DO_NOT_EDIT.R"), recursive = TRUE)
 
   invisible(TRUE)
 }
