@@ -7,3 +7,5 @@ check: document
 document:
 	R -s -e "many::document()"
 
+site:
+	R -s -e "pkgdown::build_site()"

@@ -23,8 +23,11 @@ Imports:
   mapper,
   cli
 Suggests:
-  jsonlite,
-  devtools,
-  rstudioapi
+    jsonlite,
+    devtools,
+    rstudioapi,
+    knitr,
+    rmarkdown
 Remotes:
   devOpifex/mapper
+VignetteBuilder: knitr
