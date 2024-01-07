@@ -2,7 +2,7 @@
 title: "Usage"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{usage}
+  %\VignetteIndexEntry{Usage}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
