@@ -6,17 +6,17 @@ Use _many_ directories to build R packages.
 
 This allows using many folders to write R packages,
 letting you structure the project more or less how you
-want but keep the existing R toolchain around R packages
+but benefiting from the R toolchain around R packages
 (testing, documentation, etc.).
 
 </div>
 
 ## How it works
 
-The function `bundle` looks, by default, for
+The function `bundle` looks for
 `.R` files in the `srcpkg` and simply copies
-them to the `/R` directory whilst tracking of
-changes in the hidden `.many` file.
+them to the `/R` directory whilst tracking
+changes in the `.many` file.
 If that process fails you can run `reset` to clear
 that file the subsequent `bundle` run will force copy all files.
 
