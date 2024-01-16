@@ -29,3 +29,8 @@ you want to switch off all messages.
 to do this, it's handled in `bundle()`.
 - If you run into any issue you can always reset the tracking by
 running `many::reset()` (you will NOT lose any progress).
+
+## Previous work
+
+To our knowledghe, [rfold](https://CRAN.R-project.org/package=rfold) is the only other package, hosted on CRAN, 
+that proposed the idea of using multiple directories to build R packages, but with a different code implementation.
