@@ -30,3 +30,7 @@ to do this, it's handled in `bundle()`.
 - If you run into any issue you can always reset the tracking by
 running `many::reset()` (you will NOT lose any progress).
 
+
+## Related work
+
+- See [rfold](https://CRAN.R-project.org/package=rfold) for a different implementation
