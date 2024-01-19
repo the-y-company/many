@@ -22,6 +22,8 @@ create_dir_if_not_exists <- \(dir){
 #'
 #' @keywords internal
 make_destination_file <- \(srcfile, destdir) {
+  srcfile <- gsub("-", "--", srcfile)
+
   fl <- srcfile |>
     strsplit("/") |>
     (\(.) .[[1]])()
