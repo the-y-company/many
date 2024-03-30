@@ -2,21 +2,19 @@
 #'
 #' Bundles R files from nested directory into a flat one.
 #'
-#' @param src Source directory.
 #' @param file Source file to copy.
-#' @param dest Destination directory.
 #'
 #' @name bundle
 #' @export
-bundle <- \(src = "srcpkg", dest = "R"){
+bundle <- \(plugin = c(), ...){
   if(!is_many()){
     error("this is not a \"many\" project, run `use_many()`\n")
     return(invisible())
   }
 
   # because file.path does not strip that !?
-  src <- gsub("/$", "", src)
-  dest <- gsub("/$", "", dest)
+  src <- "srcpkg"
+  dest <- "R"
 
   bundle_announce("{.pkg many}: bundling")
   on.exit({
@@ -30,7 +28,7 @@ bundle <- \(src = "srcpkg", dest = "R"){
   ) |>
     lapply(\(file) {
       file <- file.path(src, file)
-      bundle_file(file = file, dest = dest)
+      bundle_file(file = file)
     })
 
   tidy(src, dest)
@@ -41,12 +39,12 @@ bundle <- \(src = "srcpkg", dest = "R"){
 
 #' @rdname bundle
 #' @export
-bundle_file <- \(file, dest = "R") {
+bundle_file <- \(file, ...) {
   if (missing(file)) {
     stop("missing file")
   }
 
-  destination <- make_destination_file(file, dest)
+  destination <- make_destination_file(file, "R")
 
   if (!hash_match(destination, type = "dst")) {
     error("MISMATCH:  ", bold(destination), " it looks like it was edited, delete manually and re-run.\n")

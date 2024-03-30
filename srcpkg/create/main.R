@@ -1,5 +1,7 @@
 #' Use many
 #'
+#' Create a many project.
+#'
 #' @inheritParams bundle
 #'
 #' @importFrom usethis use_build_ignore use_package use_build_ignore

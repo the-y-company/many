@@ -10,5 +10,5 @@ use_many(src = "srcpkg")
 \item{src}{Source directory.}
 }
 \description{
-Use many
+Create a many project.
 }
